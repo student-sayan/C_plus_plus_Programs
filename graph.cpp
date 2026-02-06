@@ -6,26 +6,29 @@ using namespace std;
 class Graph{
 	int v;
 	list<int> *l;
-	
+
 	public:
-		Graph(int v){
+	 	Graph(int v){
 			this->v = v;
-			l= new list<int>[v];
+			l = new list<int>[v];
 		}
-		
-		void addedge(int u, int v){
+
+		void addedge(int v, int u){
 			l[u].push_back(v);
 			l[v].push_back(u);
 		}
-		
+
 		void print(){
-			for(int i=0; i<v; i++){
+			for (int i = 0; i < v; i++)
+			{
 				cout<<i<<"->";
-				for(int j : l[i]){
+				for (int j : l[i])
+				{
 					cout<<j<<" ";
 				}
 				cout<<endl;
 			}
+			
 		}
 };
 
@@ -36,7 +39,8 @@ int main(){
 	g.addedge(1,3);
 	g.addedge(2,3);
 	g.addedge(2,4);
-	
+
 	g.print();
 	return 0;
 }
+
